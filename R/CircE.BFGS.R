@@ -1756,12 +1756,12 @@ res$est[((p-1)+1)]=b[1];param[((p-1)+1)]=b[1]
 hess=if(equal.com==TRUE & equal.ang==FALSE)objective1hess(param)  else if(equal.com==FALSE & equal.ang==FALSE)objective2hess(param) else if(equal.com==TRUE & equal.ang==TRUE) objective3hess(param) else objective4hess(param)
 
 qr.hess <- try(if(mcsc=="unconstrained"){qr(hess)} else if(mcsc=="0"){qr(hess[-c(p),-c(p)])} else if(mcsc=="-1"){qr(hess[-c(p,seq(p+1,p-1+m,by=2)),-c(p,seq(p+1,p-1+m,by=2))])}, silent=TRUE)
-        if (class(qr.hess) == "try-error"){
+        if (inherits(qr.hess, "try-error")){
             warning("\n\n\nCould not compute QR decomposition of Hessian.\nOptimization probably did not converge.\n*Increase the maximum number of iterations (iterlim) the computer will attempt in seeking convergence.\n*Increase the parameter factr.")
 			}
 
 solve.hess <- try(if(mcsc=="unconstrained"){(solve(hess))} else if(mcsc=="0"){(solve(hess[-c(p),-c(p)]))} else if(mcsc=="-1"){(solve(hess[-c(p,seq(p+1,p-1+m,by=2)),-c(p,seq(p+1,p-1+m,by=2))]))}, silent=TRUE)
-        if (class(solve.hess) == "try-error"){
+        if (inherits(solve.hess, "try-error")){
    if(length(parA)>=1/2*(p*(p+1))){stop('\n\nSINGULAR HESSIAN: THE MODEL IS PROBABLY UNDERIDENTIFIED. \nTHE STANDARD ERRORS OF THE MODEL PARAMETER ESTIMATES CANNOT BE COMPUTED.\n\n')}
    else if(length(parA)<1/2*(p*(p+1))){stop('\n\nSINGULAR HESSIAN: THE MODEL IS PROBABLY MISSPECIFIED. \n*TRY TO REMOVE EQUALITY CONSTRAINTS (i.e., equal.ang=TRUE/equal.com=TRUE/mcsc="-1"/mcsc="0") AND/OR REDUCE m. \nTHE STANDARD ERRORS OF THE MODEL PARAMETER ESTIMATES CANNOT BE COMPUTED.\n\n')}
 }
