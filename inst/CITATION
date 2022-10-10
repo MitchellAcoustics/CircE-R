@@ -1,0 +1,18 @@
+citHeader("To cite the CircE package in publications use:")
+
+citEntry(entry="Article",
+         author=personList( as.person("Michele Grassi"),as.person("Riccardo Luccio"),as.person("Lisa Di Blas")),
+         title="CircE: An R implementation of Browne's circular stochastic process model",
+         journal="Behavior Research Methods",
+         year=2010,
+         volume=42,
+number=1,
+         pages="55--73",
+         url="http://link.springer.com/article/10.3758%2FBRM.42.1.55",
+         textVersion=paste(
+           "Grassi, M., Luccio, R., and Di Blas, L. (2010)",
+           "CircE: An R implementation of Browne's circular stochastic process model",
+           "Behavior Research Methods, 42(1), 55--73","URL http://link.springer.com/article/10.3758%2FBRM.42.1.55")
+         )
+
+citFooter("As CircE is evolving, you may want to cite its version number. Find it with 'help(package=CircE)'.")

@@ -1,0 +1,8 @@
+NEWS
+1.0   
+    o	Function CircE.BFGS differs from the one provided as supplemental materials on Behavior Research Methods site. This version should works more reliably in estimating RMSEA confidence intervals if sample size is (very) large.
+
+    o   Function CircE.BFGS contained some deprecated function: 'as.real' and 'is.real' in principal axis factoring (pfa) code where substituted with 'is.double' and 'as.double'.
+
+1.1
+    o	Function CircE.Plot allows to produce the (360-angular positions) configuration (reversing the circular order) with the argument 'reverse=TRUE'

@@ -1,0 +1,10 @@
+Overview:---------CircE-package           the library `CircE': summary informationFunctions:----------CircE-package           Circumplex models Estimation
+CircE.BFGS              Circumplex models estimation
+CircE.Plot              Circumplex Estimates Plot
+bound.assign            Bound assignation for polar angles
+char.assign             Points character and color assignation for
+                        CircE.Plot
+datasets:---------SELF5                  Child interpersoanl Circumplex: 5th grade self  
+                       reports
+Block                  Block's matrix (1954)
+Verbal                 Verbal Ability Tests correlation matrix
